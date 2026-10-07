@@ -12,8 +12,8 @@ To update a summary, edit its entry in `REPOS` and push to `main`.
 
 ## Logo
 
-The magic wand logo (*asa* is Turkish for "wand") lives in `assets/`:
+The logo is a magic wand among atomic orbitals (*asa* is Turkish for "wand"). Files in `assets/`:
 
-- `logo.svg` / `logo.png`: rounded tile for the website and favicon
-- `avatar.svg` / `avatar.png`: full-bleed 1024×1024 square for the GitHub organization avatar
-- `logo-mark.svg`: wand only, transparent background, for light backgrounds
+- `avatar.png`: 1024×1024 on white, for the GitHub organization avatar
+- `logo.png` / `logo-512.png`: transparent background, trimmed, for the website and other uses
+- `favicon.png`: 64×64 browser-tab icon

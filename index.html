@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Autonomous Scientific Agents</title>
 <meta name="description" content="Autonomous Scientific Agents (ASA) advances scientific productivity through AI agents in an open and collaborative environment.">
-<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/avatar.png">
 <meta property="og:title" content="Autonomous Scientific Agents">
 <meta property="og:image" content="https://autonomous-scientific-agents.github.io/assets/avatar.png">
@@ -46,7 +46,9 @@
   a { color: var(--accent); }
   .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
   header { padding: 64px 0 40px; border-bottom: 1px solid var(--border); }
-  .brand { display: block; width: 88px; height: 88px; margin: 0 0 20px; }
+  .brand { display: block; width: 120px; height: 120px; margin: 0 0 20px; border-radius: 24px; }
+  :root[data-theme="dark"] .brand { background: #f7f8f6; padding: 8px; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .brand { background: #f7f8f6; padding: 8px; } }
   .eyebrow { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin: 0 0 12px; }
   h1 { font-size: clamp(32px, 6vw, 52px); line-height: 1.1; margin: 0 0 16px; letter-spacing: -.02em; }
   .lede { font-size: 19px; color: var(--muted); max-width: 680px; margin: 0 0 24px; }
@@ -77,7 +79,7 @@
 <body>
 <header>
   <div class="wrap">
-    <img class="brand" src="assets/logo.svg" alt="ASA magic wand logo">
+    <img class="brand" src="assets/logo-512.png" alt="ASA logo: a magic wand surrounded by atomic orbitals">
     <p class="eyebrow">Open-source AI for science</p>
     <h1>Autonomous Scientific Agents</h1>
     <p class="lede">ASA is an organization dedicated to advancing scientific productivity through the innovative use of AI agents in an open and collaborative environment.</p>
