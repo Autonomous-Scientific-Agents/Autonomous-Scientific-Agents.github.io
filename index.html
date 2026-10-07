@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Autonomous Scientific Agents</title>
+<meta name="description" content="Autonomous Scientific Agents (ASA) advances scientific productivity through AI agents in an open and collaborative environment.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23196b63'/%3E%3Ctext x='16' y='21' font-family='Arial' font-weight='700' font-size='12' fill='white' text-anchor='middle'%3EASA%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #f7f8f6;
+    --surface: #ffffff;
+    --text: #17201e;
+    --muted: #5b6764;
+    --border: #dfe4e2;
+    --accent: #196b63;
+    --accent-soft: #e3f0ee;
+    --shadow: 0 1px 2px rgba(16, 24, 22, .05), 0 4px 16px rgba(16, 24, 22, .04);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1413;
+      --surface: #171e1d;
+      --text: #e6ecea;
+      --muted: #9aa8a4;
+      --border: #2a3533;
+      --accent: #5cc3b6;
+      --accent-soft: #1b2e2b;
+      --shadow: none;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0f1413; --surface: #171e1d; --text: #e6ecea; --muted: #9aa8a4;
+    --border: #2a3533; --accent: #5cc3b6; --accent-soft: #1b2e2b; --shadow: none;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  a { color: var(--accent); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+  header { padding: 64px 0 40px; border-bottom: 1px solid var(--border); }
+  .eyebrow { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin: 0 0 12px; }
+  h1 { font-size: clamp(32px, 6vw, 52px); line-height: 1.1; margin: 0 0 16px; letter-spacing: -.02em; }
+  .lede { font-size: 19px; color: var(--muted); max-width: 680px; margin: 0 0 24px; }
+  .links { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { display: inline-block; padding: 9px 16px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; border: 1px solid var(--border); color: var(--text); background: var(--surface); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+  main { padding: 40px 0 64px; }
+  h2 { font-size: 22px; margin: 0 0 6px; }
+  .section-note { color: var(--muted); margin: 0 0 20px; font-size: 15px; }
+  section + section { margin-top: 48px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; box-shadow: var(--shadow); }
+  .card h3 { margin: 0 0 8px; font-size: 18px; }
+  .card h3 a { color: var(--text); text-decoration: none; }
+  .card h3 a:hover { color: var(--accent); }
+  .card p { margin: 0 0 16px; color: var(--muted); font-size: 15px; flex: 1; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; font-size: 13px; color: var(--muted); }
+  .tag { background: var(--accent-soft); color: var(--accent); padding: 2px 8px; border-radius: 999px; font-weight: 600; }
+  .meta a { font-weight: 600; text-decoration: none; }
+  footer { border-top: 1px solid var(--border); padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
+  @media (max-width: 480px) {
+    header { padding: 40px 0 28px; }
+    .lede { font-size: 17px; }
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <p class="eyebrow">Open-source AI for science</p>
+    <h1>Autonomous Scientific Agents</h1>
+    <p class="lede">ASA is an organization dedicated to advancing scientific productivity through the innovative use of AI agents in an open and collaborative environment.</p>
+    <div class="links">
+      <a class="btn primary" href="https://github.com/Autonomous-Scientific-Agents">View on GitHub</a>
+      <a class="btn" href="#projects">Browse projects</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="projects">
+  <section>
+    <h2>Projects</h2>
+    <p class="section-note">Original repositories developed by ASA.</p>
+    <div class="grid" id="own"></div>
+  </section>
+  <section>
+    <h2>Forks</h2>
+    <p class="section-note">Working copies of upstream projects that ASA builds on or extends.</p>
+    <div class="grid" id="forks"></div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    Autonomous Scientific Agents · <a href="https://github.com/Autonomous-Scientific-Agents">github.com/Autonomous-Scientific-Agents</a>
+  </div>
+</footer>
+
+<script>
+  // Curated summaries for each public repository. Star counts are refreshed
+  // from the GitHub API when the page loads; new public repos appear automatically
+  // with their GitHub description.
+  const ORG = "Autonomous-Scientific-Agents";
+  const REPOS = [
+    { name: "IQC", lang: "Python", stars: 6,
+      desc: "Interactive Quantum Chemistry: a framework for running quantum chemistry workflows (single points, geometry optimizations, frequencies, thermochemistry) across ab initio codes and machine-learning potentials such as MACE and UMA." },
+    { name: "IQC-Dashboard", lang: "Jupyter Notebook", stars: 1, homepage: "https://iqc-dashboard.streamlit.app/",
+      desc: "A Streamlit dashboard for exploring IQC results, with 3D molecular viewers, analytics, and fast DuckDB queries over large Parquet datasets." },
+    { name: "HashMol3D", lang: "Python", stars: 1,
+      desc: "Deterministic, readable 3D molecular geometry identifiers and hashes that are invariant to rotation, translation, permutation, and parity, for chemistry, ML, and HPC workflows." },
+    { name: "chemgraph-leaderboard", lang: "Python", stars: 3,
+      desc: "A Gradio leaderboard for benchmarking agentic AI systems on computational chemistry tasks." },
+    { name: "PubChemAgent", lang: "Python", stars: 1,
+      desc: "A LangGraph agent that answers natural-language questions about chemical compounds using the PubChem database, with support for OpenAI, Gemini, and Claude." },
+    { name: "Paper2Code", lang: "Python", stars: 6,
+      desc: "A CrewAI multi-agent system that reads computational science papers and generates code to reproduce their findings, with self-testing and iterative improvement." },
+    { name: "Paper2Container", lang: "Python", stars: 0,
+      desc: "Analyzes academic papers and automatically builds containerized (Docker) Python or R environments that match their computational requirements." },
+    { name: "AI-tools-for-science", lang: "TypeScript", stars: 0, homepage: "https://autonomous-scientific-agents.github.io/AI-tools-for-science/",
+      desc: "A searchable, community-rated directory of AI tools for scientists, started for the Intro to HPC Undergraduate Bootcamp." },
+    { name: "GettingStarted", lang: null, stars: 1,
+      desc: "Getting-started guides for ALCF summer interns: setting up AI coding assistants and using Argonne's LLM APIs and inference endpoints." },
+    { name: "ChemGraphDev", fork: true, lang: "Python", stars: 0,
+      desc: "Development fork of ChemGraph, an agentic framework that automates computational chemistry and materials science workflows with LLMs." },
+    { name: "ChemGraphAgentX", fork: true, lang: "Jupyter Notebook", stars: 0,
+      desc: "A version of ChemGraph built for the AgentX competition." },
+    { name: "ChemGraphIR", fork: true, lang: "Jupyter Notebook", stars: 0,
+      desc: "A ChemGraph fork for agent-driven molecular simulation workflows built on LangGraph and ASE." },
+    { name: "mace", fork: true, lang: "Python", stars: 0,
+      desc: "Fork of MACE: fast and accurate machine-learning interatomic potentials with higher-order equivariant message passing." }
+  ];
+
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+  function card(r) {
+    const url = `https://github.com/${ORG}/${r.name}`;
+    const site = r.homepage ? `<a href="${esc(r.homepage)}">Website</a>` : "";
+    return `<article class="card">
+      <h3><a href="${url}">${esc(r.name)}</a></h3>
+      <p>${esc(r.desc || "No description yet.")}</p>
+      <div class="meta">
+        ${r.lang ? `<span class="tag">${esc(r.lang)}</span>` : ""}
+        <span aria-label="stars">★ ${r.stars ?? 0}</span>
+        <a href="${url}">Code</a>
+        ${site}
+      </div>
+    </article>`;
+  }
+
+  function render(list) {
+    document.getElementById("own").innerHTML = list.filter(r => !r.fork).map(card).join("");
+    document.getElementById("forks").innerHTML = list.filter(r => r.fork).map(card).join("");
+  }
+
+  render(REPOS);
+
+  // Refresh stars and pick up new public repos from the GitHub API.
+  fetch(`https://api.github.com/orgs/${ORG}/repos?type=public&per_page=100`)
+    .then(res => res.ok ? res.json() : Promise.reject(res.status))
+    .then(live => {
+      const byName = new Map(REPOS.map(r => [r.name.toLowerCase(), r]));
+      const merged = live
+        .filter(g => !g.archived && g.name.toLowerCase() !== `${ORG}.github.io`.toLowerCase())
+        .map(g => {
+          const known = byName.get(g.name.toLowerCase()) || {};
+          return {
+            name: g.name,
+            fork: g.fork,
+            lang: g.language || known.lang,
+            stars: g.stargazers_count,
+            homepage: g.homepage || known.homepage,
+            desc: known.desc || g.description
+          };
+        });
+      const order = new Map(REPOS.map((r, i) => [r.name.toLowerCase(), i]));
+      merged.sort((a, b) => (order.get(a.name.toLowerCase()) ?? 999) - (order.get(b.name.toLowerCase()) ?? 999) || b.stars - a.stars);
+      render(merged);
+    })
+    .catch(() => { /* keep the built-in list */ });
+</script>
+</body>
+</html>
