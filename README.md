@@ -9,3 +9,11 @@ the GitHub API, and any new public repository shows up automatically with its Gi
 curated summary is added.
 
 To update a summary, edit its entry in `REPOS` and push to `main`.
+
+## Logo
+
+The magic wand logo (*asa* is Turkish for "wand") lives in `assets/`:
+
+- `logo.svg` / `logo.png`: rounded tile for the website and favicon
+- `avatar.svg` / `avatar.png`: full-bleed 1024×1024 square for the GitHub organization avatar
+- `logo-mark.svg`: wand only, transparent background, for light backgrounds
